@@ -96,7 +96,7 @@ class Villain extends Hero  {
 // Test you work by un-commenting these 3 objects and the list of console logs below:
 
 
-  const mage = new Humanoid({
+  const Mage = new Humanoid({
     createdAt: new Date(),
     dimensions: {
       length: 2,
@@ -112,7 +112,7 @@ class Villain extends Hero  {
     language: 'Common Tongue',
   });
 
-  const swordsman = new Humanoid({
+  const Swordsman = new Humanoid({
     createdAt: new Date(),
     dimensions: {
       length: 2,
@@ -129,7 +129,7 @@ class Villain extends Hero  {
     language: 'Common Tongue',
   });
 
-  const archer = new Humanoid({
+  const Archer = new Humanoid({
     createdAt: new Date(),
     dimensions: {
       length: 1,
@@ -146,7 +146,7 @@ class Villain extends Hero  {
     language: 'Elvish',
   });
 
-  const buffguy = new Hero({
+  const Buffguy = new Hero({
     createdAt: new Date(),
     dimensions: {
       length: 3,
@@ -167,7 +167,7 @@ class Villain extends Hero  {
     }
   });
 
-  const jerk = new Villain({
+  const Jerk = new Villain({
     createdAt: new Date(),
     dimensions: {
       length: 3,
@@ -175,7 +175,7 @@ class Villain extends Hero  {
       height: 5,
     },
     healthPoints: 20,
-    name: 'jerk',
+    name: 'Jerk',
     team: 'Villain Team',
     weapons: [
       'Ray Gun',
@@ -198,7 +198,7 @@ class Villain extends Hero  {
    //console.log(archer.greet()); // Lilith offers a greeting in Elvish.
   //console.log(mage.takeDamage()); // Bruce took damage.
   //console.log(swordsman.destroy()); // Sir Mustachio was removed from the game.
-  // console.log(jerk.death());
+  // console.log(Jerk.death());
 
   // Stretch task:
   // * Create Villain and Hero constructor functions that inherit from the Humanoid constructor function.
@@ -208,24 +208,24 @@ class Villain extends Hero  {
 
 ///To Play the Game, simply type 'matchStart()' in the console
   function matchStart(name) {
-    for (let i=0; i <= jerk.healthPoints || i <= buffguy.healthPoints;  ) {
-      jerk.attack(buffguy);//jerk attacks buffguy
-      buffguy.attack(jerk);//buffguy attacks jerk
-      if (jerk.healthPoints <= buffguy.healthPoints) {
+    for (let i=0; i <= Jerk.healthPoints || i <= Buffguy.healthPoints;  ) {
+      Jerk.attack(buffguy);//jerk attacks buffguy
+      Buffguy.attack(jerk);//buffguy attacks jerk
+      if (Jerk.healthPoints <= Buffguy.healthPoints) {
         //sets i = healthpoints so loop keeps running
-        i=jerk.healthPoints;
+        i=Jerk.healthPoints;
       } else {
-        i=buffguy.healthPoints;
+        i=Buffguy.healthPoints;
       } if (i <=0) {
         break; //once healthpoints reaches zero or below, exit the loop
       }
 
   }
-  if (jerk.healthPoints > buffguy.healthPoints) {
+  if (Jerk.healthPoints > Buffguy.healthPoints) {
     alert('Congrats Jerk, you won!');//if jerk's healthpoints are greater
   } else {
     alert('Congrats Buffguy, you won!');//if buffguy's healthpoints are greater
   }//resets the health score
-  buffguy.healthPoints = 20;
-  jerk.healthPoints = 20;
+  Buffguy.healthPoints = 20;
+  Jerk.healthPoints = 20;
 }
